@@ -1,0 +1,12 @@
+services:
+  vitrine:
+    build: .
+    ports:
+      - "43123:43123"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      PORT: "43123"
+      HOSTNAME: "0.0.0.0"
+    restart: unless-stopped
